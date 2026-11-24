@@ -19,6 +19,14 @@ If only one move is possible it is played automatically.
 2. SQL Editor → New query → paste `supabase.sql` → Run.
 3. Project Settings → API → copy **Project URL** and **anon public** key into `config.js`.
 
+### What is safe to push to GitHub
+- `config.js` with the **Project URL + anon (public) key**: safe. That key is meant to be public, since every
+  player's browser downloads it anyway. Vercel needs this file in the repo for online mode to work.
+- **Never push**: the `service_role` key, your database password, or any `.env` file. This game never needs them.
+- Because the `rooms` table is open to the anon key, someone who has the key could mess with room data.
+  That's fine for a friends-only game, but don't store anything private in this Supabase project.
+- Free Supabase projects pause after about a week with no activity. Open the dashboard and click *Restore* if online stops working.
+
 ## 2. Deploy to Vercel
 - Easiest: `npx vercel` from inside this `ludo` folder (framework: **Other**, no build command, output = `.`).
 - Or push to GitHub, import in Vercel, and set **Root Directory** to `ludo`.
