@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var L = window.Ludo, CFG = window.LUDO_CONFIG || {};
-  var SB_SRC = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js';
+  var SB_SRC = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js';
   var JOIN_ORDER = ['red', 'yellow', 'green', 'blue']; // 2 players sit opposite each other
   var NAMES = { red: 'Red', green: 'Green', yellow: 'Yellow', blue: 'Blue' };
   var HEX = { red: '#e53935', green: '#2e9e44', yellow: '#f6c90e', blue: '#1e88e5' };
