@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Ludo with Friends</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2 2'%3E%3Crect width='1' height='1' fill='%23e53935'/%3E%3Crect x='1' width='1' height='1' fill='%232e9e44'/%3E%3Crect y='1' width='1' height='1' fill='%231e88e5'/%3E%3Crect x='1' y='1' width='1' height='1' fill='%23f6c90e'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="home" class="screen on">
+  <div class="wrap">
+    <h1 class="logo"><span>L</span><span>U</span><span>D</span><span>O</span></h1>
+    <p class="sub">Roll it. Race it. Roast your friends.</p>
+    <input id="name" maxlength="12" placeholder="Your name" autocomplete="off">
+    <button id="bOffline" class="btn">📱 Play offline</button>
+    <button id="bResume" class="btn ghost hide">↩ Continue last offline game</button>
+    <div class="card">
+      <div class="h">🌐 Online room</div>
+      <button id="bCreate" class="btn alt">Create room</button>
+      <div class="row">
+        <input id="code" maxlength="5" placeholder="CODE" autocomplete="off" autocapitalize="characters" spellcheck="false">
+        <button id="bJoin" class="btn alt">Join</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="setup" class="screen">
+  <div class="wrap">
+    <h2>Offline game</h2>
+    <p class="sub">Pass the phone around, or add bots.</p>
+    <div id="seats"></div>
+    <button id="bStartOff" class="btn">Start game</button>
+    <button class="btn ghost" data-home>Back</button>
+  </div>
+</section>
+
+<section id="lobby" class="screen">
+  <div class="wrap">
+    <p class="sub">Room code</p>
+    <div id="lCode" class="bigcode"></div>
+    <button id="bShare" class="btn ghost">🔗 Share invite link</button>
+    <div id="lSeats"></div>
+    <button id="bStartOn" class="btn">Start game</button>
+    <p id="lWait" class="sub">Waiting for host to start…</p>
+    <button id="bLeave" class="btn ghost">Leave</button>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <div class="top">
+    <button id="bExit" class="icon" aria-label="Exit">✕</button>
+    <span id="gTitle"></span>
+    <div class="tr">
+      <button id="bSkip" class="icon small hide">Skip ⏭</button>
+      <button id="bSound" class="icon" aria-label="Sound">🔊</button>
+      <button id="bPlayers" class="icon" aria-label="Players">👥</button>
+    </div>
+  </div>
+  <div id="table">
+    <div id="boardWrap">
+      <div id="board"></div>
+      <div id="quads"></div>
+      <div id="toks"></div>
+    </div>
+  </div>
+</section>
+
+<div id="pmenu" class="overlay hide">
+  <div class="panel">
+    <h2>Players</h2>
+    <div id="pList"></div>
+    <p id="pNote" class="sub hide">Only the host can remove players.</p>
+    <button id="bPClose" class="btn ghost">Close</button>
+  </div>
+</div>
+
+<div id="over" class="overlay hide">
+  <div class="panel">
+    <h2>🏁 Game over</h2>
+    <ol id="rank"></ol>
+    <button id="bAgain" class="btn">Play again</button>
+    <p id="oWait" class="sub hide">Waiting for host…</p>
+    <button id="bHome2" class="btn ghost">Home</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="config.js"></script>
+<script src="game.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
